@@ -1,74 +1,103 @@
-# Health Unified Interface - Frontend
+# 🏥 HealthShare Frontend
 
-The modern, responsive frontend for the **Health Unified Interface**, built to provide a seamless experience for both Citizens (Patients) and Medical Professionals.
+AI-Powered Health Platform - Frontend Application
 
-## 🎨 Tech Stack
+## 🚀 Quick Deploy to Vercel
 
-- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **UI Library**: [Shadcn UI](https://ui.shadcn.com/)
-- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **Animations**: [Anime.js](https://animejs.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ashwath2103/health-frontend)
 
-## ✨ Key Features
+## 📋 Prerequisites
 
-### 👤 Citizen Portal
-- **Secure Login**: Access using ABHA Health ID.
-- **Dashboard**: Overview of medical history and emergency profile.
-- **Medical Timeline**: Visual history of lab reports, prescriptions, and scans.
-- **Consent Manager**: Grant or revoke access to doctors.
-- **Emergency Mode**: Quick access to Blood Group, Allergies, and SOS contacts.
+- Node.js 18+
+- Backend API running (see [health-backend](https://github.com/Ashwath2103/health-backend))
+- LiveKit account for video consultations
 
-### 🩺 Doctor Portal
-- **Verified Access**: Login using Medical License ID.
-- **Patient Search**: Search patients by ABHA ID.
-- **Consultation Management**: View patient history (with consent) and add new records.
-- **Sidebar Navigation**: Efficient workflow management.
+## 🛠️ Local Development
 
-## 🛠️ Setup & Installation
+### 1. Install Dependencies
+```bash
+npm install
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Ashwath2103/health-frontend.git
-   cd health-frontend
+### 2. Environment Variables
+Create `.env.local` file:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_LIVEKIT_URL=wss://your-project.livekit.cloud
+```
+
+### 3. Run Development Server
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000)
+
+## 🌐 Vercel Deployment
+
+### Method 1: Vercel Dashboard (Recommended)
+
+1. **Go to [vercel.com](https://vercel.com)**
+2. **Click "Add New Project"**
+3. **Import Git Repository:**
+   - Select: `Ashwath2103/health-frontend`
+4. **Configure Project:**
+   - Framework Preset: **Next.js** (auto-detected)
+   - Root Directory: `./` (leave as default)
+5. **Add Environment Variables:**
    ```
-
-2. **Install Dependencies**
-   ```bash
-   npm install --legacy-peer-deps
+   NEXT_PUBLIC_API_URL = https://your-backend-url.com
+   NEXT_PUBLIC_LIVEKIT_URL = wss://your-project.livekit.cloud
    ```
-   *(Note: `--legacy-peer-deps` might be needed due to some React 19 rc conflicts with specific libraries).*
+6. **Click "Deploy"**
 
-3. **Environment Setup**
-   Create a `.env.local` file:
-   ```env
-   NEXT_PUBLIC_API_URL=http://localhost:8000/api
-   ```
+### Method 2: Vercel CLI
 
-4. **Run Application**
-   ```bash
-   npm run dev
-   ```
-   Open `http://localhost:3000` in your browser.
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-## 🖥️ Usage
+# Login
+vercel login
 
-### Login Credentials (Demo)
+# Deploy
+vercel
 
-| Portal | ID | Password |
-|--------|----|----------|
-| **Citizen** | `12-3456-7890-0000` | `password123` |
-| **Doctor** | `DOC-88219` | `password123` |
+# Add environment variables
+vercel env add NEXT_PUBLIC_API_URL
+vercel env add NEXT_PUBLIC_LIVEKIT_URL
 
-## 📂 Project Structure
+# Deploy to production
+vercel --prod
+```
 
-- `src/app/citizen`: Routes for Patient pages.
-- `src/app/doctor`: Routes for Doctor pages.
-- `src/components/ui`: Reusable Shadcn components.
-- `src/store`: Zustand state management (Auth).
-- `src/services`: API integration logic.
+## 🔧 Environment Variables
 
-## 🤝 Contributing
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_API_URL` | Backend API URL | `https://api.healthshare.com` |
+| `NEXT_PUBLIC_LIVEKIT_URL` | LiveKit WebSocket URL | `wss://project.livekit.cloud` |
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## 📦 Build
+
+```bash
+npm run build
+```
+
+## ✨ Features
+
+- 🎨 Modern UI with Tailwind CSS & Shadcn
+- 🤖 AI Health Assistant with 3D animations
+- 📹 Video Consultations (LiveKit)
+- 🔐 Dual Portal (Citizen & Doctor)
+- 📱 Fully Responsive
+- 🌙 Dark Mode Support
+
+## 🔗 Related
+
+- **Backend:** [health-backend](https://github.com/Ashwath2103/health-backend)
+- **Main Repo:** [healthshare-platform](https://github.com/Shashanth27/healthshare-platform)
+
+## 📄 License
+
+MIT
